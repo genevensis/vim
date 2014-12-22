@@ -68,6 +68,15 @@ nnoremap <leader>f zR                       " open all folds
 nnoremap <leader>c zM                       " close all folds
 " }}}
 
+" Leader shortcuts {{{
+let mapleader=","                           " leader is comma
+" edit vimrc and load vimrc bindings
+nnoremap <leader>ev :e $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+" save session
+nnoremap <leader>s :mksession<CR>
+" }}}
+
 " Movements {{{
 " unmap arrow keys
 noremap <Up> <nop>
@@ -116,16 +125,6 @@ set wildignore+=*.DS_Store                      " OSX bullshit
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe     " ignore a type of files in wild menu
 set wildignore+=*.swp,*.bak,*.pyc,*.class       " ignore a few more things
 " }}}
-
-" Leader shortcuts {{{
-let mapleader=","                           " leader is comma
-" edit vimrc and load vimrc bindings
-nnoremap <leader>ev :e $MYVIMRC<CR>
-nnoremap <leader>sv :source $MYVIMRC<CR>
-" save session
-nnoremap <leader>s :mksession<CR>
-" }}}
-
 
 " Backups {{{
 set noswapfile                              " self expl
