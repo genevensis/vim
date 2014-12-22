@@ -1,5 +1,4 @@
 #Installation
-#------------
 Installing Thoughtbot boostrap
 ```
 curl --remote-name https://raw.githubusercontent.com/thoughtbot/laptop/master/mac
@@ -19,13 +18,11 @@ defaults write com.apple.finder AppleShowAllFiles YES
 
 
 #Symlinks
-#--------
 ```
 ln -s ~/.vim/vimrc ~/.vimrc
 ```
 
 #Updating bundles
-#----------------
 ```
 git submodule update --recursive
 ```
