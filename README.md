@@ -6,6 +6,11 @@ less mac
 bash mac 2>&1 | tee ~/laptop.log
 ```
 
+Installing zsh
+```
+curl -L http://install.ohmyz.sh | sh
+```
+
 Installing vim plugins & other backup files
 ```
 git clone --recursive https://github.com/genevensis/vim.git ~/.vim/
