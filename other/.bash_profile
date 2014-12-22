@@ -1,4 +1,6 @@
-alias ls='ls -a --colors'
+alias ls='ls -aF'
+alias ll='ls -lagF'
+
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
