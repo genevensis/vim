@@ -21,6 +21,10 @@ See hidden files/folders in Finder
 defaults write com.apple.finder AppleShowAllFiles YES
 ```
 
+Activate Dark / Light Theme Toggle with CTRL-ALT-FN+T
+```
+defaults write -g _HIEnableThemeSwitchHotKey 1
+```
 
 #Symlinks
 ```
