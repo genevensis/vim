@@ -9,8 +9,10 @@ set nocompatible                            " use vim and not vi settings
     if has("win32")
         let vimdir = $HOME.'\vimfiles'
         behave mswin
+        set path+=D:\Dropbox\Private\Project\**
     else
         let vimdir = $HOME.'/.vim'
+        set path+=/Users/dri/Code/Dropbox/Private/Project/**
     endif
     set autochdir
 " }}}
