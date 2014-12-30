@@ -22,6 +22,11 @@ See hidden files/folders in Finder
 defaults write com.apple.finder AppleShowAllFiles YES
 ```
 
+Disable Dashboard
+```
+defaults write com.apple.dashboard mcx-disabled -boolean YES; killall Dock
+```
+
 #Symlinks
 ```
 ln -s ~/.vim/.vimrc ~/.vimrc
