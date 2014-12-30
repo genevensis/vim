@@ -4,6 +4,8 @@ Installing Apps
 - [GitHub](http://git-scm.com/download/mac)
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 - [Vagrant](http://www.vagrantup.com/downloads.html)
+- [Dropbox](https://www.dropbox.com/downloading?src=inde)
+- [LiveReload] (https://itunes.apple.com/us/app/livereload/id482898991?mt=12#)
 
 Installing zsh
 ```
