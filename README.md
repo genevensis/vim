@@ -1,9 +1,9 @@
 #Installation
 Installing Apps
-[Chrome](https://www.google.com/chrome?brand=CHMO#eula)
-[GitHub](http://git-scm.com/download/mac)
-[VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-[Vagrant](http://www.vagrantup.com/downloads.html)
+-[Chrome](https://www.google.com/chrome?brand=CHMO#eula)
+-[GitHub](http://git-scm.com/download/mac)
+-[VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+-[Vagrant](http://www.vagrantup.com/downloads.html)
 
 Installing zsh
 ```
