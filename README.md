@@ -23,7 +23,7 @@ defaults write com.apple.finder AppleShowAllFiles YES
 
 #Symlinks
 ```
-ln -s ~/.vim/vimrc ~/.vimrc
+ln -s ~/.vim/.vimrc ~/.vimrc
 ```
 
 #Updating bundles
