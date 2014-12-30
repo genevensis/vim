@@ -25,6 +25,7 @@ defaults write com.apple.finder AppleShowAllFiles YES
 Disable Dashboard
 ```
 defaults write com.apple.dashboard mcx-disabled -boolean YES; killall Dock
+defaults write com.apple.dock mcx-expose-disabled -bool true; killall Dock
 ```
 
 #Symlinks
