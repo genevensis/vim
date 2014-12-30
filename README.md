@@ -36,5 +36,5 @@ git submodule update --recursive
 - [Download](http://www.sublimetext.com/3)
 - [Packages](https://packagecontrol.io/installation)
 ```
-Packages to install : Soda Theme ("theme": "Soda Dark.sublime-theme"), Emmet, AutofileName, Bracket Highlighter
+Packages to install : Soda Theme ("theme": "Soda Dark.sublime-theme"), Emmet, AutofileName, Bracket Highlighter, SublimeLinter
 ```
