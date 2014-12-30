@@ -39,7 +39,7 @@ git submodule update --recursive
 Packages to install (SHIFT-CMD-P): 
 Soda Theme - ("theme": "Soda Dark.sublime-theme")
 Emmet
-AutofileName
+AutoFileName
+All Autocomplete
 Bracket Highlighter
-SublimeLinter
 ```
