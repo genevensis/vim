@@ -49,3 +49,14 @@ AutoFileName
 All Autocomplete
 Bracket Highlighter
 ```
+
+
+#Windows
+- [Cmder](http://bliker.github.io/cmder/)
+- [gVimPortable] (http://portableapps.com/apps/development/gvim_portable)
+```
+Install gVimPortable on D:\
+Open Cmder to D:\gVimPortable\Data\settings
+git clone --recursive https://github.com/genevensis/vim.git vimfiles
+mklink /H _vimrc "vimfiles\.vimrc"
+```
