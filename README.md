@@ -1,4 +1,4 @@
-#Installation
+###Installation
 Installing Apps
 - [Chrome](https://www.google.com/chrome?brand=CHMO#eula)
 - [GitHub](http://git-scm.com/download/mac)
@@ -28,17 +28,17 @@ defaults write com.apple.dashboard mcx-disabled -boolean YES; killall Dock
 defaults write com.apple.dock mcx-expose-disabled -bool true; killall Dock
 ```
 
-#Symlinks
+###Symlinks
 ```
 ln -s ~/.vim/.vimrc ~/.vimrc
 ```
 
-#Updating bundles
+###Updating bundles
 ```
 git submodule update --recursive
 ```
 
-#Sublime Text 3
+###Sublime Text 3
 - [Download](http://www.sublimetext.com/3)
 - [Packages](https://packagecontrol.io/installation)
 ```
@@ -51,7 +51,7 @@ Bracket Highlighter
 ```
 
 
-#Windows
+###Windows
 - [Cmder](http://bliker.github.io/cmder/)
 - [gVimPortable] (http://portableapps.com/apps/development/gvim_portable)
 ```
