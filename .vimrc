@@ -276,6 +276,19 @@ set nocompatible                            " use vim and not vi settings
         au VimResized * :wincmd =                  " for mswindows
     else
     endif
+
+    " Put at the very end of your .vimrc file.
+
+    function! PhpSyntaxOverride()
+        hi! def link phpDocTags  phpDefine
+        hi! def link phpDocParam phpType
+    endfunction
+
+    augroup phpSyntaxOverride
+        autocmd!
+        autocmd FileType php call PhpSyntaxOverride()
+    augroup END
+
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
