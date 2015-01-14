@@ -57,6 +57,7 @@ Bracket Highlighter
 ```
 Install gVimPortable on D:\
 Open Cmder to D:\gVimPortable\Data\settings
-git clone --recursive https://github.com/genevensis/vim.git vimfiles
+mklink /D D:\gVimPortable\Data\settings\vimfiles D:\Dropbox\Private\Files\VimFiles
+(git clone --recursive https://github.com/genevensis/vim.git vimfiles)
 mklink /H _vimrc "vimfiles\.vimrc"
 ```
