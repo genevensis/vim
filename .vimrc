@@ -28,7 +28,7 @@ set nocompatible                            " use vim and not vi settings
     set ruler                                   " show the cursor position all the time
     set laststatus=2                            " always display the status line
     set textwidth=80                            " set width of main file
-    #set nowrap                                  " dont wrap lines on load
+    "set nowrap                                  " dont wrap lines on load
     set wrap
     set fo-=t                                   " No auto-wrap when typing
     set linebreak                               " wrap lines at convenient points
