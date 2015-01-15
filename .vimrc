@@ -90,8 +90,6 @@ set nocompatible                            " use vim and not vi settings
     " edit vimrc and load vimrc bindings
     nnoremap <leader>ev :e $MYVIMRC<CR>
     nnoremap <leader>sv :source $MYVIMRC<CR>
-    " save session
-    nnoremap <leader>s :mksession<CR>
 " }}}
 
 " Movements {{{
@@ -111,20 +109,6 @@ set nocompatible                            " use vim and not vi settings
     map <C-left> <ESC><ESC>:tabprev<CR>
     map <C-right> <ESC><ESC>:tabnext<CR>
     map <C-down> <ESC><ESC>:tabclose<CR>
-
-    "map <C-j> <C-W>j<C-W>_
-    "map <C-k> <C-W>k<C-W>_
-    "set wmh=0 so=999 winheight=999
-    "map <C-h> <C-W>h
-    "map <C-j> <C-W>j
-    "map <C-k> <C-W>k
-    "map <C-l> <C-W>l
-    "noremap <A-l> gt
-    "noremap <A-h> gT
-    "noremap <A-j> gt
-    "noremap <A-k> gT
-    "set tabstop=4
-
 " }}}
 
 " Wildmenu Settings {{{
@@ -204,6 +188,22 @@ set nocompatible                            " use vim and not vi settings
 
     " highlight last inserted text
     nnoremap gV `[v`]
+    
+    " Use CTRL-S for saving, also in Insert mode
+    " If the current buffer has never been saved, it will have no name,
+    " call the file browser to save it, otherwise just save it.
+    command -nargs=0 -bar Update if &modified 
+                           \|    if empty(bufname('%'))
+                           \|        browse confirm write
+                           \|    else
+                           \|        confirm write
+                           \|    endif
+                           \|endif
+    noremap <C-S> :Update<CR><CR>
+    vmap <C-s> <esc>:w<CR>gv
+    "vnoremap <C-S> <C-C>:Update<CR><CR>
+    inoremap <C-S> <C-O>:Update<CR><CR>
+    
 " }}}
 
 " Airline Plugin {{{
