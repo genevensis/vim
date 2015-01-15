@@ -1,5 +1,5 @@
 """""""""" VIMRC """"""""""""
-" Version 0.4 - 30.12.14
+" Version 0.7 - 15.01.15
 """""""""""""""""""""""""""""
 
 execute pathogen#infect()
@@ -28,7 +28,8 @@ set nocompatible                            " use vim and not vi settings
     set ruler                                   " show the cursor position all the time
     set laststatus=2                            " always display the status line
     set textwidth=80                            " set width of main file
-    set nowrap                                  " dont wrap lines on load
+    #set nowrap                                  " dont wrap lines on load
+    set wrap
     set fo-=t                                   " No auto-wrap when typing
     set linebreak                               " wrap lines at convenient points
     set colorcolumn=+1                          " show width column
@@ -58,7 +59,7 @@ set nocompatible                            " use vim and not vi settings
     set shiftround                              " use multiple of shiftwidth when identing
     set expandtab                               " tabs are spaces
     set list listchars=tab:>>,trail:.,nbsp:.    " display extra whitespace
-    set backspace=indent,eol,start              " dlete through anything
+    set backspace=indent,eol,start              " delete through anything
 " }}}
 
 " Searching {{{
@@ -94,11 +95,6 @@ set nocompatible                            " use vim and not vi settings
 " }}}
 
 " Movements {{{
-    " unmap arrow keys
-    noremap <Up> <nop>
-    noremap <Down> <nop>
-    noremap <Left> <nop>
-    noremap <Right> <nop>
     " Switch between the last two files
     nnoremap <leader><leader> <c-^>
     set scrolljump=5                            " Jump 5 lines when running out of the screen
@@ -111,6 +107,11 @@ set nocompatible                            " use vim and not vi settings
 " }}}
 
 " Windows and Tabs {{{
+    map <C-up> <ESC><ESC>:tabnew<CR>
+    map <C-left> <ESC><ESC>:tabprev<CR>
+    map <C-right> <ESC><ESC>:tabnext<CR>
+    map <C-down> <ESC><ESC>:tabclose<CR>
+
     "map <C-j> <C-W>j<C-W>_
     "map <C-k> <C-W>k<C-W>_
     "set wmh=0 so=999 winheight=999
@@ -123,10 +124,7 @@ set nocompatible                            " use vim and not vi settings
     "noremap <A-j> gt
     "noremap <A-k> gT
     "set tabstop=4
-    "map <C-up> <ESC><ESC>:tabnew<CR>
-    "map <C-left> <ESC><ESC>:tabprev<CR>
-    "map <C-right> <ESC><ESC>:tabnext<CR>
-    "map <C-down> <ESC><ESC>:tabclose<CR>
+
 " }}}
 
 " Wildmenu Settings {{{
@@ -233,7 +231,6 @@ set nocompatible                            " use vim and not vi settings
 " Autogroups {{{
     augroup configgroup
         autocmd!
-        au GUIEnter * simalt ~x
         autocmd VimEnter * highlight clear SignColumn
         autocmd VimEnter * wincmd p
         autocmd FileType java setlocal noexpandtab
@@ -241,6 +238,9 @@ set nocompatible                            " use vim and not vi settings
         autocmd FileType java setlocal listchars=tab:+\ ,eol:-
         autocmd FileType java setlocal formatprg=par\ -w80\ -T4
         autocmd FileType php setlocal expandtab
+        autocmd FileType php setlocal tabstop=2
+        autocmd FileType php setlocal shiftwidth=2
+        autocmd FileType php setlocal softtabstop=2
         autocmd FileType php setlocal list
         autocmd FileType php setlocal listchars=tab:+\ ,eol:-
         autocmd FileType php setlocal formatprg=par\ -w80\ -T4
@@ -274,6 +274,7 @@ set nocompatible                            " use vim and not vi settings
     if has("win32")
         " Resize splits when the window is resized
         au VimResized * :wincmd =                  " for mswindows
+        au GUIEnter * simalt ~x
     else
     endif
 
