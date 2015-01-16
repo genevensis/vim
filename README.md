@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ###Installation
 Installing Apps
 - [Chrome](https://www.google.com/chrome?brand=CHMO#eula)
@@ -11,6 +10,11 @@ Installing Apps
 Installing zsh
 ```
 curl -L http://install.ohmyz.sh | sh
+```
+
+Installing Homebrew
+```
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 Installing vim plugins & other backup files
@@ -62,6 +66,3 @@ mklink /D D:\gVimPortable\Data\settings\vimfiles D:\Dropbox\Private\Files\VimFil
 (git clone --recursive https://github.com/genevensis/vim.git vimfiles)
 mklink /H _vimrc "vimfiles\.vimrc"
 ```
-=======
-# vim
->>>>>>> 017b72850db845f0e7f866e20a49200fbd919b61
