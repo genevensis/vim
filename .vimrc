@@ -39,7 +39,9 @@ set nocompatible                            " use vim and not vi settings
 " Colors and Fonts {{{
     colorscheme badwolf                         " colortheme
     let g:badwolf_tabline = 2
-    let g:badwolf_html_link_underline = 0
+    let g:badwolf_html_link_underline = 1
+    let g:badwolf_css_props_highlight = 1
+    let g:badwolf_darkgutter = 1
     if has("win32")
         set guifont=Courier\ New:h11
         set guioptions=eg                       " turn off scrollbar and other gui
@@ -203,12 +205,12 @@ set nocompatible                            " use vim and not vi settings
 
 " Airline Plugin {{{
     let g:airline#extensions#tabline#enabled = 1
-    let g:airline_powerline_fonts = 1
+    "let g:airline_powerline_fonts = 1
     let g:airline_theme="dark"
-    let g:airline_left_sep = ''
-    let g:airline_left_alt_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_right_alt_sep = ''
+    "let g:airline_left_sep = ''
+    "let g:airline_left_alt_sep = ''
+    "let g:airline_right_sep = ''
+    "let g:airline_right_alt_sep = ''
 " }}}
 
 " CtrlP plugin (fuzzy file searcher) {{{
