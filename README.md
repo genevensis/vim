@@ -38,9 +38,11 @@ defaults write com.apple.dock mcx-expose-disabled -bool true; killall Dock
 ln -s ~/.vim/.vimrc ~/.vimrc
 ```
 
-###Updating bundles
+###Submodules
 ```
 git submodule update --recursive
+git submodule add https://github.com/user/newmodule ~/.vim/bundle/
+
 ```
 
 ###Sublime Text 3
