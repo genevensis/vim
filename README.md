@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ###Installation
 Installing Apps
 - [Chrome](https://www.google.com/chrome?brand=CHMO#eula)
@@ -61,3 +62,6 @@ mklink /D D:\gVimPortable\Data\settings\vimfiles D:\Dropbox\Private\Files\VimFil
 (git clone --recursive https://github.com/genevensis/vim.git vimfiles)
 mklink /H _vimrc "vimfiles\.vimrc"
 ```
+=======
+# vim
+>>>>>>> 017b72850db845f0e7f866e20a49200fbd919b61
