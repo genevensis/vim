@@ -1,5 +1,5 @@
 """""""""" VIMRC """"""""""""
-" Version 0.7 - 15.01.15
+" Version 0.1 - 16.01.15
 """""""""""""""""""""""""""""
 
 execute pathogen#infect()
@@ -30,7 +30,7 @@ set nocompatible                            " use vim and not vi settings
     set textwidth=80                            " set width of main file
     "set nowrap                                  " dont wrap lines on load
     set wrap
-    set fo-=t                                   " No auto-wrap when typing
+    "set fo-=t                                   " No auto-wrap when typing
     set linebreak                               " wrap lines at convenient points
     set colorcolumn=+1                          " show width column
     set noshowmode                              " dont show INSERT notification
@@ -90,11 +90,11 @@ set nocompatible                            " use vim and not vi settings
     " edit vimrc and load vimrc bindings
     nnoremap <leader>ev :e $MYVIMRC<CR>
     nnoremap <leader>sv :source $MYVIMRC<CR>
+    " save session
+    nnoremap <leader>s :mksession<CR>
 " }}}
 
 " Movements {{{
-    " Switch between the last two files
-    nnoremap <leader><leader> <c-^>
     set scrolljump=5                            " Jump 5 lines when running out of the screen
     set scrolloff=3                             " Indicate jump out of the screen when 3 lines before end of the screen
     set sidescrolloff=10                        " Same on the sides
@@ -109,18 +109,29 @@ set nocompatible                            " use vim and not vi settings
     map <C-left> <ESC><ESC>:tabprev<CR>
     map <C-right> <ESC><ESC>:tabnext<CR>
     map <C-down> <ESC><ESC>:tabclose<CR>
+
+    "map <C-j> <C-W>j<C-W>_
+    "map <C-k> <C-W>k<C-W>_
+    "set wmh=0 so=999 winheight=999
+    "map <C-h> <C-W>h
+    "map <C-j> <C-W>j
+    "map <C-k> <C-W>k
+    "map <C-l> <C-W>l
+    "noremap <A-l> gt
+    "noremap <A-h> gT
+    "noremap <A-j> gt
+    "noremap <A-k> gT
+    "set tabstop=4
+
 " }}}
 
 " Wildmenu Settings {{{
     set wildmenu                                " visual autocomplete for command menu
     set wildmode=list:longest                   " make wildmenu behave like bash
     set wildignore+=.hg,.git,.svn                   " Version control
-    set wildignore+=*.aux,*.out,*.toc               " LaTeX intermediate files
     set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg  " binary images
     set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
-    set wildignore+=*.spl                           " compiled spelling word lists
-    set wildignore+=*.sw?                           " Vim swap files
-    set wildignore+=*.DS_Store                      " OSX bullshit
+    set wildignore+=*.spl,*.sw?,.DS_Store           " more files
     set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe     " ignore a type of files in wild menu
     set wildignore+=*.swp,*.bak,*.pyc,*.class       " ignore a few more things
 " }}}
@@ -188,22 +199,6 @@ set nocompatible                            " use vim and not vi settings
 
     " highlight last inserted text
     nnoremap gV `[v`]
-    
-    " Use CTRL-S for saving, also in Insert mode
-    " If the current buffer has never been saved, it will have no name,
-    " call the file browser to save it, otherwise just save it.
-    command -nargs=0 -bar Update if &modified 
-                           \|    if empty(bufname('%'))
-                           \|        browse confirm write
-                           \|    else
-                           \|        confirm write
-                           \|    endif
-                           \|endif
-    noremap <C-S> :Update<CR><CR>
-    vmap <C-s> <esc>:w<CR>gv
-    "vnoremap <C-S> <C-C>:Update<CR><CR>
-    inoremap <C-S> <C-O>:Update<CR><CR>
-    
 " }}}
 
 " Airline Plugin {{{
@@ -217,9 +212,11 @@ set nocompatible                            " use vim and not vi settings
 " }}}
 
 " CtrlP plugin (fuzzy file searcher) {{{
+    let g:ctrlp_map = '<c-p>'
+    let g:ctrlp_cmd = 'CtrlP'
     let g:ctrlp_match_window = 'bottom,order:ttb'
     let g:ctrlp_switch_buffer = 0
-    let g:ctrlp_working_path_mode = 0
+    let g:ctrlp_working_path_mode = 'ra'
     if has("win32")
         let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
     else
@@ -244,6 +241,7 @@ set nocompatible                            " use vim and not vi settings
         autocmd FileType php setlocal list
         autocmd FileType php setlocal listchars=tab:+\ ,eol:-
         autocmd FileType php setlocal formatprg=par\ -w80\ -T4
+        autocmd FileType php set omnifunc=phpcomplete#CompletePHP
         autocmd FileType ruby setlocal tabstop=2
         autocmd FileType ruby setlocal shiftwidth=2
         autocmd FileType ruby setlocal softtabstop=2
