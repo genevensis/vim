@@ -42,7 +42,10 @@ ln -s ~/.vim/.vimrc ~/.vimrc
 ```
 git submodule update --recursive
 git submodule add https://github.com/user/newmodule ~/.vim/bundle/newmodule
-git rm --cached $submodulepath | git commit -m ""
+git rm --cached $submodulepath
+git commit -m "removing submodule"
+rm -rf $submodulepath
+rm -rf .git/modules/$submodulepath
 ```
 
 ###Sublime Text 3
